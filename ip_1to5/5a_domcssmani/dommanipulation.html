@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Manipulation Example</title>
+</head>
+<body>
+    <h1>DOM Manipulation</h1>
+
+    <div id="app">
+        <p>Hello, This is an Example of DOM Manipulation.</p>
+        <button id="btn">Click me to see an Image!</button>
+    </div>
+
+    <script>
+        // Find the container element
+        const container = document.getElementById('app');
+
+        // Create a new element
+        const newElement = document.createElement('p');
+        newElement.textContent = 'This is a dynamically created image.';
+
+        // Append the new element to the container
+        container.appendChild(newElement);
+
+        // Find the button element
+        const button = document.getElementById('btn');
+
+        // Add a click event listener to the button
+        button.addEventListener('click', function () {
+            // Change the text of the dynamically created paragraph
+            newElement.textContent = 'Button clicked!';
+            
+            // Create and append a new image element
+            const imgElement = document.createElement('img');
+            imgElement.setAttribute('src', 'dommani.jpg');
+            container.appendChild(imgElement);
+        });
+    </script>
+</body>
+</html>

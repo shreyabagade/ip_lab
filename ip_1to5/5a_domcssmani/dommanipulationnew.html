@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="container c1">
+      <h2 id="title1">Hello this is altaf</h2>
+      <h5>hello bachcho</h5>
+      <h5>5+2</h5>
+      <h5 id="sum"></h5>
+      <!-- Added an ID for the result -->
+    </div>
+    <div class="container">
+      <button onclick="changeTitle()">Change Title</button>
+      <button onclick="changeBgColor()">Change BgColor</button>
+      <button onclick="getSum()">Get Sum</button>
+    </div>
+
+    <script>
+      const getSum = () => {
+        let num1 = 5,
+          num2 = 2;
+        let summ = num1 + num2;
+
+        // Create a new paragraph element and set its text content
+        const newNode = document.createElement("p");
+        const textNode = document.createTextNode(summ);
+        newNode.appendChild(textNode);
+
+        // Append the new paragraph to the container
+        const cont = document.querySelector(".c1");
+        cont.appendChild(newNode); // Changed from "insertAfter"
+      };
+
+      const changeTitle = () => {
+        // Change the innerHTML of the title element
+        document.getElementById("title1").innerHTML = "Hello this is pikachu";
+      };
+
+      const changeBgColor = () => {
+        // Change the background color of all elements with class "container"
+        let cont = document.querySelectorAll(".container");
+        for (let i = 0; i < cont.length; i++) {
+          cont[i].style.backgroundColor = "lightblue";
+        }
+      };
+    </script>
+  </body>
+</html>
