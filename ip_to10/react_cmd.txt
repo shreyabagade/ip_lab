@@ -36,3 +36,25 @@ import React, { useState } from 'react';
 • );
 • }
 • export default CountApp;
+
+import React,{useEffect, useState} from 'react'
+function App()
+{
+const[count,setCount]=useState(10)
+const[data,setData]=useState(100)
+useEffect(()=>{
+console.warn("called with count state")
+},[count])
+useEffect(()=>{
+console.warn("called with data state")
+},[data])
+return(
+<div>
+<h1>Count:{count}</h1>
+<h1> Data:{Data}</h1>
+<button onClick={(()=>setCount(count+1))}> Update Count </button>
+<button onClick={(()=>setData(data+1))}> Update Data </button>
+</div>
+)
+}
+export default App;
